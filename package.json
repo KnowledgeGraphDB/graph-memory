@@ -1,7 +1,7 @@
 {
   "name": "graph-memory",
   "version": "1.6.0-beta.16",
-  "description": "Knowledge graph memory for DeepSeek Harness and OpenClaw — cross-session recall, PageRank, communities, and vector search",
+  "description": "Knowledge graph memory for DeepSeek Harness and OpenClaw \u2014 cross-session recall, PageRank, communities, and vector search",
   "keywords": [
     "deepseek-harness",
     "cordis",
@@ -50,15 +50,17 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
-    "build:dsh": "tsc -p tsconfig.dsh.json",
+    "build": "node init && tsc",
+    "build:dsh": "node init && tsc -p tsconfig.dsh.json",
     "prepack": "npm run build",
     "verify:package": "node scripts/verify-package.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@sinclair/typebox": "^0.34.48"
+    "@sinclair/typebox": "^0.34.48",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
